@@ -25,7 +25,7 @@ brew trust yashashwi-s/tap
 brew install --cask photo-widget-osx
 ```
 
-> **Note:** Since this app is not notarized (no $99 Apple Developer account required!), macOS will show a security warning on first launch. To open it: **right-click the app → Open → Open**.
+> **Note:** Since this app is not notarized, macOS will show a security warning on first launch. To open it: **right-click the app → Open → Open**.
 
 ## Quick Start
 
