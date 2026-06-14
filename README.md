@@ -16,22 +16,22 @@ Unlike Apple's built-in WidgetKit widgets (which lock you to 4 fixed sizes and c
 
 ## Download
 
-**[⬇️ Download latest release](https://github.com/yashashwi-s/PhotoWidgetOSX/releases/latest)**
+**[Download latest release](https://github.com/nishant32f/PhotoWidgetOSX/releases/latest)**
 
-Or install via Homebrew:
+For a local build from this repository:
+
 ```bash
-brew tap yashashwi-s/tap
-brew trust yashashwi-s/tap
-brew install --cask photo-widget-osx
+xcodebuild -project PhotoWidgetOSX.xcodeproj -scheme PhotoWidgetOSX -configuration Release
+open ~/Library/Developer/Xcode/DerivedData
 ```
 
-> **Note:** Since this app is not notarized, macOS will show a security warning on first launch. To open it: **right-click the app → Open → Open**.
+> **Note:** Local builds are ad-hoc signed and not notarized. macOS may show a security warning on first launch. To open it: **right-click the app -> Open -> Open**.
 
 ## Quick Start
 
-1. Download and open `Photo Widget OSX.dmg`
-2. Drag the app to your Applications folder
-3. Launch it — a 📷 icon appears in your **menu bar**
+1. Download and open the local package or release artifact.
+2. Drag `Photo Widget OSX.app` to your Applications folder.
+3. Launch it — a camera icon appears in your **menu bar**
 4. Click **Add Photo…** to pick images from your Mac
 5. Your photos appear on your desktop — **drag them anywhere**
 6. **Right-click** any photo to lock its position or remove it
@@ -71,19 +71,22 @@ Apple's WidgetKit (what powers desktop widgets) only supports 4 fixed sizes. Pho
 ## Building from Source
 
 ```bash
-# Install XcodeGen
-brew install xcodegen
-
 # Clone the repo
-git clone https://github.com/yashashwi-s/PhotoWidgetOSX.git
+git clone https://github.com/nishant32f/PhotoWidgetOSX.git
 cd PhotoWidgetOSX
 
-# Generate Xcode project
-xcodegen generate
+# Build the checked-in Xcode project
+xcodebuild -project PhotoWidgetOSX.xcodeproj -scheme PhotoWidgetOSX -configuration Release
 
 # Open in Xcode and hit ⌘R
 open PhotoWidgetOSX.xcodeproj
 ```
+
+## Security Review
+
+This fork was scanned before republishing. The review found no malicious code in the current source tree: no network client, shell/process execution, dynamic loading, keychain access, global event capture, hidden LaunchAgent, suspicious entitlement, build script, external dependency, or bundled executable payload.
+
+The full local scan report is generated under `/tmp/codex-security-scans/PhotoWidgetOSX/` when run by Codex. See [SECURITY_REVIEW.md](SECURITY_REVIEW.md) for the summary committed with this fork.
 
 ## License
 
